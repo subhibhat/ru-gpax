@@ -39,7 +39,7 @@
 	show.setAttribute('style', 'margin-top: 15px')
 
 	show.innerHTML = `
-	หน่วยกิตรวม: <strong>${unit}</strong><br />
-	เกรดเฉลี่ย: <strong>${gpax}</strong>
+		หน่วยกิตรวม: <strong>${unit}</strong><br />
+		เกรดเฉลี่ย: <strong>${gpax}</strong>
 	`
 })()
