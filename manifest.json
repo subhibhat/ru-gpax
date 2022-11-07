@@ -1,0 +1,16 @@
+{
+	"name": "RU GPAX Calculator",
+	"description": "ส่วนขยาย Google Chrome สำหรับการคำนวนจำนวนหน่วยกิตและเกรดเฉลี่ยที่สอบผ่านบนเว็บไซต์ beta-e-service.ru.ac.th ของนักศึกษามหาวิทยาลัยรามคำแหง",
+	"version": "1.0",
+	"manifest_version": 3,
+	"content_scripts": [
+		{
+			"matches": [
+				"https://beta-e-service.ru.ac.th/index.php?r=Grade/Transcript"
+			],
+			"js": [
+				"dist/main.js"
+			]
+		}
+	]
+}
