@@ -15,30 +15,30 @@
 		let data = {
 			code: row.cells[2].innerHTML,
 			unit: parseInt(row.cells[3].innerHTML),
-			grade: gradeToPoint(row.cells[4].innerHTML.trim())
+			point: gradeToPoint(row.cells[4].innerHTML.trim())
 		}
 
 		let index = list.findIndex(item => item.code == data.code)
 
 		if (index > -1) {
 			let oldData = list[index]
-			list[index] = oldData.grade > data.grade ? oldData : data
+			list[index] = oldData.point > data.point ? oldData : data
 		}
 
 		list.push(data)
 	}
 
-	const point= list.map(item => item.unit * item.grade).reduce((prv, cur) => prv + cur)
+	const point= list.map(item => item.unit * item.point).reduce((prv, cur) => prv + cur)
 	const unit = list.map(item => item.unit).reduce((prv, cur) => prv + cur)
 	const gpax = parseFloat(point/unit).toFixed(2)
 
-	const boxData = document.getElementById('yw0')
+	const show = document.getElementById('yw0')
 	
-	boxData.innerHTML = ''
-	boxData.classList.add('alert', 'alert-success')
-	boxData.setAttribute('style', 'margin-top: 15px')
+	show.innerHTML = ''
+	show.classList.add('alert', 'alert-success')
+	show.setAttribute('style', 'margin-top: 15px')
 
-	boxData.innerHTML = `
+	show.innerHTML = `
 	หน่วยกิตรวม: <strong>${unit}</strong><br />
 	เกรดเฉลี่ย: <strong>${gpax}</strong>
 	`
