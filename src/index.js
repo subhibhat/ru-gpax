@@ -28,7 +28,7 @@
 		list.push(data)
 	}
 
-	const point = list.map(item => item.unit * item.grade).reduce((prv, cur) => prv + cur)
+	const point= list.map(item => item.unit * item.grade).reduce((prv, cur) => prv + cur)
 	const unit = list.map(item => item.unit).reduce((prv, cur) => prv + cur)
 	const gpax = parseFloat(point/unit).toFixed(2)
 
